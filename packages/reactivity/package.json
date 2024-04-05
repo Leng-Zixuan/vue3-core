@@ -4,6 +4,10 @@
   "description": "",
   "main": "index.js",
   "module": "dist/reactivity.esm-bundle.js",
+  "files": [
+    "index.js",
+    "dist"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,6 +16,13 @@
   "license": "MIT",
   "buildOptions": {
     "name": "VueReactivity",
-    "formats": ["cjs", "esm-bundle", "global"]
+    "formats": [
+      "cjs",
+      "esm-bundler",
+      "global"
+    ]
+  },
+  "dependencies": {
+    "@vue/shared": "workspace:*"
   }
 }

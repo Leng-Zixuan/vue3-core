@@ -1,1 +1,4 @@
-const a = 1;
+
+
+export let b = 1;
+console.log(b);
