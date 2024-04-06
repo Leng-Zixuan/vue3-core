@@ -1,11 +1,14 @@
 // ================================================
 
 import { isObject } from "@vue/shared"
+import {
+    mutableHandler,
+    shallowReactiveHandler,
+    readonlyHandler,
+    shallowReadonlyHandler
+} from "./baseHandlers"
 
-const mutableHandler = {}
-const shallowReactiveHandler = {}
-const readonlyHandler = {}
-const shallowReadonlyHandler = {}
+
 
 // 以下四个函数创建响应式对象的参数是不是只读，是不是深度
 
