@@ -1,4 +1,4 @@
-// ================================================
+/////////////////////////////////////////////////////////////////////
 
 import { isObject } from "@vue/shared"
 import {
@@ -7,7 +7,6 @@ import {
     readonlyHandler,
     shallowReadonlyHandler
 } from "./baseHandlers"
-
 
 
 // 以下四个函数创建响应式对象的参数是不是只读，是不是深度
@@ -52,7 +51,7 @@ export function shallowReadonly<T extends object>(target: T) {
     return createReactiveObject(target, true, shallowReadonlyHandler)
 }
 
-// ==============================================
+/////////////////////////////////////////////////////////////////////
 
 // 被代理目标对象的类型顶以
 export interface Target {}

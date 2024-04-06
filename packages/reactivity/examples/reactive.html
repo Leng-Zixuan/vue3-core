@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="../dist/reactivity.global.js"></script>
+    <script>
+        const {
+            reactive,
+            shallowReactive,
+            readonly
+        } = VueReactivity
+        console.log(reactive, '=====reactive');
+        console.log(shallowReactive, '=====shallowReactive');
+
+        const log1 = reactive({ name: 'test', obj: { n: 12 } })
+        console.log(log1, '====log1');
+        console.log(log1.obj, '====log1.obj');
+
+        const log2 = shallowReactive({ name: 'test', obj: { n: 12 } })
+        console.log(log2, '====log2');
+        console.log(log2.obj, '====log2.obj');
+
+        const log3 = readonly({ name: 'test', obj: { n: 12 } })
+        console.log(log3, '====log3');
+        log3.name = 'aaa'
+        console.log(log3.obj, '====log3.obj');
+    </script>
+</body>
+</html>

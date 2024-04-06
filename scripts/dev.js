@@ -10,7 +10,7 @@ const targets = fs.readdirSync('packages')
 async function build(target) {
   await execa(
     'rollup',
-    ['-c', '--environment', `TARGET:${target}`],
+    ['-cw', '--environment', `TARGET:${target}`],
     { stdio: 'inherit' }
   );
 }
