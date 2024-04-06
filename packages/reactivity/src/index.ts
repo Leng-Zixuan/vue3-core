@@ -1,4 +1,6 @@
-
-
-export let b = 1;
-console.log(b);
+export {
+    reactive,
+    shallowReactive,
+    readonly,
+    shallowReadonly
+} from "./reactive";
