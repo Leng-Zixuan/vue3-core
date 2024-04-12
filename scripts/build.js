@@ -10,7 +10,18 @@ const targets = fs.readdirSync('packages')
 async function build(target) {
   await execa(
     'rollup',
-    ['-cw', '--environment', `TARGET:${target}`],
+    ['-c', '--environment', `TARGET:${target}`],
     { stdio: 'inherit' }
   );
 }
+
+// 对整体项目进行构建打包
+function runParallel(targets, iteratorFn) {
+  let res = [];
+  for (const target of targets) {
+    res.push(iteratorFn(target))
+  }
+  return Promise.all(res)
+}
+
+runParallel(targets, build)

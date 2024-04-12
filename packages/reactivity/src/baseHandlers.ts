@@ -4,6 +4,8 @@ import {
     readonly,
     type Target,
 } from './reactive'
+import { track } from './reactiveEffect'
+import { TrackOpTypes } from './constants'
 
 // 是不是只读代理 只读的属性set时会报异常
 // 是不是深度代理 
@@ -35,7 +37,7 @@ class BaseReactiveHandler implements ProxyHandler<Target> {
 
         // 如果不是只读对象，那么将收集依赖，等待数据变化后追踪依赖以便更新相应的视图
         if (!isReadonly) {
-            
+            track(target, TrackOpTypes.GET, key)
         }
 
         // 如果对象本身就是是浅层代理对象，则直接返回
